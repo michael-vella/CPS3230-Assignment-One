@@ -7,10 +7,19 @@ public class Alert {
     protected String description;
     protected String url;
     protected String imageUrl;
-    protected String postedBy;
-    protected long priceInCents;
+    protected String postedBy = "c55bc56a-232c-46a4-9778-7f0d41690aa2";
+    protected int priceInCents;
 
     public Alert() {}
+
+    public Alert(int alertType, String heading, String description, String url, String imageUrl, int priceInCents) {
+        this.alertType = alertType;
+        this.heading = heading;
+        this.description = description;
+        this.url = url;
+        this.imageUrl = imageUrl;
+        this.priceInCents = priceInCents;
+    }
 
     public void setAlertType(int alertType){
         this.alertType = alertType;
@@ -32,11 +41,7 @@ public class Alert {
         this.imageUrl = imageUrl;
     }
 
-    public void setPostedBy(String postedBy){
-        this.postedBy = postedBy;
-    }
-
-    public void setPriceInCents(long priceInCents){
+    public void setPriceInCents(int priceInCents){
         this.priceInCents = priceInCents;
     }
 

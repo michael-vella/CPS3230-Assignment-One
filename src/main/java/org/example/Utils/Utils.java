@@ -4,13 +4,11 @@ public class Utils {
     public Utils(){}
 
     public int parsePrice(String price){
-        int multiplier = 1;
+        int multiplier = 100;
         String newPrice = "";
 
-        if (price.contains(",") && price.contains(".")){
+        if (price.contains(".")){
             multiplier = 1;
-        } else if (price.contains(",") && !price.contains(".")) {
-            multiplier = 100;
         }
 
         for (int i = 0; i < price.length(); i ++){

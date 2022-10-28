@@ -11,47 +11,53 @@ import java.net.http.HttpResponse;
 import java.util.List;
 
 public class Request {
-
-    public Request(){}
     protected ApiService apiService;
+    public Request(){}
 
     public void setApiService(ApiService apiService){ this.apiService = apiService; }
 
     public int sendPostRequestToApi(String jsonString) throws IOException, InterruptedException {
-        if (apiService == null) {
-            return -1;
+        if (apiService != null){
+            if (apiService.getApi() == ApiService.INITIALISED){
+                HttpClient client = HttpClient.newHttpClient();
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create("https://api.marketalertum.com/Alert"))
+                        .POST(HttpRequest.BodyPublishers.ofString(jsonString))
+                        .header("Content-Type", "application/json")
+                        .build();
+
+                HttpResponse<String> response = client.send(request,
+                        HttpResponse.BodyHandlers.ofString());
+                // 201 Created
+                return response.statusCode();
+            } else {
+                return -1;
+            }
         }
-
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api.marketalertum.com/Alert"))
-                .POST(HttpRequest.BodyPublishers.ofString(jsonString))
-                .header("Content-Type", "application/json")
-                .build();
-
-        HttpResponse<String> response = client.send(request,
-                HttpResponse.BodyHandlers.ofString());
-
-        // 201 Created
-        return response.statusCode();
+        return -1;
     }
 
     public int sendDeleteRequestToApi() throws IOException, InterruptedException {
-        if (apiService == null) {
-            return -1;
+        if (apiService != null){
+            if (apiService.getApi() == ApiService.INITIALISED){
+                HttpClient client = HttpClient.newHttpClient();
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create("https://api.marketalertum.com/Alert?userId=c55bc56a-232c-46a4-9778-7f0d41690aa2"))
+                        .DELETE()
+                        .build();
+
+                HttpResponse<String> response = client.send(request,
+                        HttpResponse.BodyHandlers.ofString());
+
+                // 200 OK
+                return response.statusCode();
+            } else {
+                return -1;
+            }
         }
+        return - 1;
 
-        HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api.marketalertum.com/Alert?userId=c55bc56a-232c-46a4-9778-7f0d41690aa2"))
-                .DELETE()
-                .build();
 
-        HttpResponse<String> response = client.send(request,
-                HttpResponse.BodyHandlers.ofString());
-
-        // 200 OK
-        return response.statusCode();
     }
 
     public boolean sendFiveAlertsToWebsite(List<Alert> alertList) throws IOException, InterruptedException {

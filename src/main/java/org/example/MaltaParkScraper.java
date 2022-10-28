@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.Utils.InputProvider;
-import org.example.Utils.Utils;
-import org.example.Utils.WebsiteService.AlertWebsite;
-import org.example.Utils.WebsiteService.MaltaParkWebsite;
+import org.example.Utils.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,19 +11,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MaltaParkScraper {
     public MaltaParkScraper(){}
 
     protected InputProvider inputProvider;
-    protected AlertWebsite alertWebsite;
     protected MaltaParkWebsite maltaParkWebsite;
+    protected WebDriverStatus webDriverStatus;
+    protected ApiService apiService;
     protected WebDriver driver;
     protected WebDriverWait wait;
 
     protected List<WebElement> items;
-    protected List<Alert> alerts;
+    protected List<Alert> alerts = new LinkedList<>();
 
     protected Utils utils;
 
@@ -38,20 +37,24 @@ public class MaltaParkScraper {
     protected String priceXPath = "//h1[contains(@class, 'top-price')]";
 
     public void setInputProvider(InputProvider inputProvider){ this.inputProvider = inputProvider; }
-    public void setAlertWebsite(AlertWebsite alertWebsite){ this.alertWebsite = alertWebsite; }
     public void setMaltaParkWebsite(MaltaParkWebsite maltaParkWebsite){ this.maltaParkWebsite = maltaParkWebsite; }
+    public void setWebDriverStatus(WebDriverStatus webDriverStatus){ this.webDriverStatus = webDriverStatus; }
+    public void setApiService(ApiService apiService) { this.apiService = apiService; }
 
     protected boolean setupDriver(){
-        // Setup Chrome Driver
-        System.setProperty("webdriver.chrome.driver", "E:/Chromedriver/chromedriver.exe");
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-        if (maltaParkWebsite == null){
+        if (webDriverStatus == null){
             return false;
         }
-        return true;
 
+        // Setup Chrome Driver
+        if (webDriverStatus.getDriverStatus() == WebDriverStatus.DRIVER_NOT_INITIALISED){
+            return false;
+        } else {
+            System.setProperty("webdriver.chrome.driver", "C:/Chromedriver/chromedriver.exe");
+            driver = new ChromeDriver();
+            wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        }
+        return true;
     }
 
     public boolean scrapeFiveAlertsAndUploadToWebsite() throws IOException, InterruptedException {
@@ -79,42 +82,61 @@ public class MaltaParkScraper {
             return false;
         }
 
-        driver.get("https://www.maltapark.com/");
-        driver.manage().window().maximize();
+        if (maltaParkWebsite == null){
+            driver.quit();
+            return false;
+        }
+
+        if (maltaParkWebsite.getMaltaParkWebsite() == MaltaParkWebsite.WEBSITE_UNAVAILABLE){
+            driver.quit();
+            return false;
+        } else {
+            driver.get("https://www.maltapark.com/");
+            driver.manage().window().maximize();
+        }
 
         WebElement searchField = driver.findElement(By.id("search"));
         searchField.sendKeys(searchText);
         searchField.sendKeys(Keys.ENTER);
+
+        int scrapedItems = 0;
 
         try {
             wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(itemsOnPageXPath)));
             items = driver.findElements(By.xpath(itemsOnPageXPath));
         } catch (Exception e){
             System.out.println("Exception while scraping items from page: " + e);
+            driver.quit();
             return false;
         }
 
-        if (items.size() == 0){
-            return false;
-        }
+        // 20 for 20 times just in case there is something wrong with an element
+        // Example - Element missing price -> element is skipped
+        // Example - Element missing image -> image is skipped
+        for (int i = 0; i < 25; i++){
+            // Retry because DOM refreshes
+            try {
+                wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(itemsOnPageXPath)));
+                items = driver.findElements(By.xpath(itemsOnPageXPath));
+            } catch (Exception e){
+                System.out.println("Exception while scraping items from page: " + e);
+                driver.quit();
+                return false;
+            }
 
-        int scrapedItems = 0;
-        boolean faultInItem;
-        String heading;
-        String description;
-        String url;
-        String imageUrl;
-        int priceInCents;
+            if (items.size() == 0){
+                driver.quit();
+                return false;
+            }
 
-        for (int i = 0; i < items.size(); i++){
             driver.navigate().to(items.get(i).getAttribute("href"));
 
-            faultInItem = false;
-            heading = "";
-            description = "";
-            url = "";
-            imageUrl = "";
-            priceInCents = 0;
+            boolean faultInItem = false;
+            String heading = "";
+            String description = "";
+            String url = "";
+            String imageUrl = "";
+            int priceInCents = 0;
 
             // Heading
             try {
@@ -169,12 +191,24 @@ public class MaltaParkScraper {
         }
 
         Request request = new Request();
-        boolean requests = request.sendFiveAlertsToWebsite(alerts);
 
-        if (!requests){
+        if (apiService == null){
+            driver.quit();
             return false;
         }
 
+        // Set apiService for the request class
+        request.setApiService(apiService);
+
+
+        boolean requests = request.sendFiveAlertsToWebsite(alerts);
+
+        if (!requests){
+            driver.quit();
+            return false;
+        }
+
+        driver.quit();
         return true;
     }
 

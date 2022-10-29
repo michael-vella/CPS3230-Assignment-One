@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fca4ba21-de70-433e-be50-c7b1e0209f73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/AlertWebsiteScraper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/WebDriverStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/AlertWebsiteSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/MaltaParkScraperTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/RequestTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/TestRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/UtilsTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/AlertWebsite.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Alert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Alert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MaltaParkScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MaltaParkScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/ApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/ApiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/WebsiteService/AlertWebsite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/AlertWebsite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/WebsiteService/MaltaParkWebsite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/MaltaParkWebsite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AlertWebsiteScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AlertWebsiteScraper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AlertWebsiteSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AlertWebsiteSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,52 +154,14 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Request.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Request.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Request.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Request.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Request.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Request.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Request.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$RequestTests.ic" NAME="RequestTests Coverage Results" MODIFIED="1666727964811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.Utils.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$org_example_in_CPS3230_Assignment_One.ic" NAME="org.example in CPS3230-Assignment-One Coverage Results" MODIFIED="1666791675263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
@@ -223,9 +170,6 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$UtilsTests.ic" NAME="UtilsTests Coverage Results" MODIFIED="1666791461745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$RequestTests.ic" NAME="RequestTests Coverage Results" MODIFIED="1666727964811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>org.example.Utils.*</FILTER>
     </SUITE>
   </component>
 </project>

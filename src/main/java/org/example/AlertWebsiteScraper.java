@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class AlertWebsiteScraper {
     String loginXPath = "//div[@class='navbar-collapse collapse d-sm-inline-flex justify-content-between']//li[2]//a";
     String userIdId = "UserId";
     String validLoginXPath = "//main[@class='pb-3']//h1";
+    String iconXPATH = "//table//tr[0]//h4//img";
 
     public boolean result;
     public boolean resultTwo;
@@ -135,5 +137,33 @@ public class AlertWebsiteScraper {
         for (int i = 0; i < n; i++){
             alerts.add((carAlert));
         }
+    }
+
+    public void viewListOfAlerts() {
+        driver.get("https://www.marketalertum.com/");
+        driver.manage().window().maximize();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(loginXPath)));
+        driver.findElement(By.xpath(loginXPath)).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(userIdId)));
+        WebElement element =  driver.findElement(By.id(userIdId));
+        element.sendKeys(userId);
+        element.sendKeys(Keys.ENTER);
+
+        // Icons
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(iconXPATH)));
+        List<WebElement> iconElements = driver.findElements(By.xpath(iconXPATH));
+
+        // Headings
+        List<String> headingElements = new ArrayList<>();
+        for (int i = 0; i > iconElements.size(); i++){
+            String heading = iconElements.get(i).getText();
+            if (!heading.equals("")){
+                headingElements.add(heading);
+            }
+        }
+
+
     }
 }

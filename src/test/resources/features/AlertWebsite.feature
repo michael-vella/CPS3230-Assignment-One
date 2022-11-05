@@ -11,9 +11,8 @@ Feature: Alert Website
     Then I should see the login screen again
 
   Scenario: Alert layout
-    Given I am an administrator of the website and I upload 3 alerts
     Given I am a user of marketalertum
-    Given I remove all alerts beforehand
+    Given I am an administrator of the website and I upload 3 alerts
     When I view a list of alerts
     Then each alert should contain an icon
     And each alert should contain a heading
@@ -23,24 +22,24 @@ Feature: Alert Website
     And each alert should contain a link to the original product website
 
     Scenario: Alert limit
-      Given I am an administrator of the website and I upload more than 5 alerts
       Given I am a user of marketalertum
-      Given I remove all alerts beforehand
+      Given I am an administrator of the website and I upload more than 5 alerts
       When I view a list of alerts
       Then I should see 5 alerts
 
-    Scenario Outline:
-      Given I am an administrator of the website and I upload an alert of type <alert-type>
+    Scenario Outline: Icon Check
       Given I am a user of marketalertum
-      Given I remove all alerts beforehand
+      Given I am an administrator of the website and I upload an alert of type "<alert-type>"
       When I view a list of alerts
       Then I should see 1 alerts
-      And the icon displayed should be <icon file name>
+      And the icon displayed should be "<icon file name>"
       Examples:
-        |Alert Type|num2|ans|
-        |5   |2   |7  |
-        |5   |-2  |3  |
-        |0   |0   |0  |
-        |7   |0   |7  |
+        |alert-type|icon file name        |
+        |1         |icon-car.png          |
+        |2         |icon-boat.png         |
+        |3         |icon-property-rent.jpg|
+        |4         |icon-property-sale.jpg|
+        |5         |icon-toys.png         |
+        |6         |icon-electronics.png  |
 
 

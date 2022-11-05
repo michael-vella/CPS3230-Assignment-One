@@ -93,6 +93,21 @@ public class MaltaParkScraper {
         } else {
             driver.get("https://www.maltapark.com/");
             driver.manage().window().maximize();
+
+            // Warning pop up code - Start
+            // This part of code was needed because a warning pop up was created by MaltaPark
+            wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("okbutton")));
+            WebElement warningPopUp = driver.findElement(By.id("okbutton"));
+
+            try {
+                Thread.sleep(11000);
+                // Could not use wait because okbutton was already visible when loading the element
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+
+            warningPopUp.click();
+            // Warning pop up code - End
         }
 
         WebElement searchField = driver.findElement(By.id("search"));
@@ -110,7 +125,7 @@ public class MaltaParkScraper {
             return false;
         }
 
-        // 20 for 20 times just in case there is something wrong with an element
+        // Loop for 25 times just in case there is something wrong with an element
         // Example - Element missing price -> element is skipped
         // Example - Element missing image -> image is skipped
         for (int i = 0; i < 25; i++){
@@ -199,7 +214,6 @@ public class MaltaParkScraper {
 
         // Set apiService for the request class
         request.setApiService(apiService);
-
 
         boolean requests = request.sendFiveAlertsToWebsite(alerts);
 

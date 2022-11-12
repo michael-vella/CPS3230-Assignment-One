@@ -47,7 +47,7 @@ public class UtilsTests {
     }
 
     @Test
-    public void testNParsePriceWithOnlyNumbers(){
+    public void testParsePriceWithOnlyNumbers(){
         // Exercise
         int result = utils.parsePrice("£400");
 

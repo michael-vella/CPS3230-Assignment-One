@@ -105,7 +105,7 @@ public class AlertWebsiteScraper {
     );
 
     public void setupDriver(){
-        System.setProperty("webdriver.chrome.driver", "C:/Chromedriver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "E:/Chromedriver/chromedriver.exe");
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
@@ -152,7 +152,6 @@ public class AlertWebsiteScraper {
     }
 
     public void uploadNAlerts(int n, ApiService apiService) throws IOException, InterruptedException {
-        // So that alerts are not
         switch (n) {
             case 1 -> alerts.add(carAlert);
             case 2 -> {

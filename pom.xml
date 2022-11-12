@@ -31,7 +31,7 @@
             <artifactId>selenium-java</artifactId>
             <version>4.5.0</version>
         </dependency>
-        <!--To convert Java class to library-->
+        <!--To convert Java class to JSON library-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>

@@ -50,7 +50,7 @@ public class MaltaParkScraper {
         if (webDriverStatus.getDriverStatus() == WebDriverStatus.DRIVER_NOT_INITIALISED){
             return false;
         } else {
-            System.setProperty("webdriver.chrome.driver", "C:/Chromedriver/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "E:/Chromedriver/chromedriver.exe");
             driver = new ChromeDriver();
             wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         }

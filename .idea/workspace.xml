@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fca4ba21-de70-433e-be50-c7b1e0209f73" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AlertWebsiteScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AlertWebsiteScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MaltaParkScraper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MaltaParkScraper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AlertWebsiteSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/AlertWebsiteSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/AlertWebsite.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/AlertWebsite.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/UtilsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/UtilsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +52,8 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MaltaParkScraperTests.testScraperForToysWithMaltaParkWebsiteAvailable">
-    <configuration name="MaltaParkScraperTests.testScraperForElectronicsWithMaltaParkWebsiteAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestRunner">
+    <configuration name="MaltaParkScraperTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPS3230-Assignment-One" />
       <extension name="coverage">
         <pattern>
@@ -63,13 +63,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.MaltaParkScraperTests" />
-      <option name="METHOD_NAME" value="testScraperForElectronicsWithMaltaParkWebsiteAvailable" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MaltaParkScraperTests.testScraperForToysWithMaltaParkWebsiteAvailable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MaltaParkScraperTests.testScraperForCarWithMaltaParkWebsiteWithApiServiceNotInitialised" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPS3230-Assignment-One" />
       <extension name="coverage">
         <pattern>
@@ -79,13 +78,28 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
       <option name="MAIN_CLASS_NAME" value="org.example.MaltaParkScraperTests" />
-      <option name="METHOD_NAME" value="testScraperForToysWithMaltaParkWebsiteAvailable" />
+      <option name="METHOD_NAME" value="testScraperForCarWithMaltaParkWebsiteWithApiServiceNotInitialised" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRunner (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RequestTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CPS3230-Assignment-One" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.RequestTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPS3230-Assignment-One" />
       <extension name="coverage">
         <pattern>
@@ -100,7 +114,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRunner (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UtilsTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CPS3230-Assignment-One" />
       <extension name="coverage">
         <pattern>
@@ -109,33 +123,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example" />
-      <option name="MAIN_CLASS_NAME" value="org.example.TestRunner" />
+      <option name="MAIN_CLASS_NAME" value="org.example.UtilsTests" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="org.example in CPS3230-Assignment-One" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CPS3230-Assignment-One" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MaltaParkScraperTests.testScraperForToysWithMaltaParkWebsiteAvailable" />
-        <item itemvalue="JUnit.MaltaParkScraperTests.testScraperForElectronicsWithMaltaParkWebsiteAvailable" />
-        <item itemvalue="JUnit.TestRunner (2)" />
-        <item itemvalue="JUnit.TestRunner (1)" />
-        <item itemvalue="JUnit.org.example in CPS3230-Assignment-One" />
+        <item itemvalue="JUnit.TestRunner" />
+        <item itemvalue="JUnit.MaltaParkScraperTests" />
+        <item itemvalue="JUnit.RequestTests" />
+        <item itemvalue="JUnit.UtilsTests" />
+        <item itemvalue="JUnit.MaltaParkScraperTests.testScraperForCarWithMaltaParkWebsiteWithApiServiceNotInitialised" />
       </list>
     </recent_temporary>
   </component>
@@ -166,23 +166,26 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$org_example_in_CPS3230_Assignment_One.ic" NAME="org.example in CPS3230-Assignment-One Coverage Results" MODIFIED="1667381149978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$RequestTests.ic" NAME="RequestTests Coverage Results" MODIFIED="1668242554166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$MaltaParkScraperTests.ic" NAME="MaltaParkScraperTests Coverage Results" MODIFIED="1667296250201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$org_example_in_CPS3230_Assignment_One.ic" NAME="org.example in CPS3230-Assignment-One Coverage Results" MODIFIED="1667719232121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$TestRunner__2_.ic" NAME="TestRunner (2) Coverage Results" MODIFIED="1667382342962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$TestRunner__1_.ic" NAME="TestRunner (1) Coverage Results" MODIFIED="1667719134787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$TestRunner__1_.ic" NAME="TestRunner (1) Coverage Results" MODIFIED="1667381622427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$MaltaParkScraperTests.ic" NAME="MaltaParkScraperTests Coverage Results" MODIFIED="1668242575972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$UtilsTests.ic" NAME="UtilsTests Coverage Results" MODIFIED="1666791461745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$TestRunner__2_.ic" NAME="TestRunner (2) Coverage Results" MODIFIED="1667719570135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>org.example.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$RequestTests.ic" NAME="RequestTests Coverage Results" MODIFIED="1666727964811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>org.example.Utils.*</FILTER>
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$TestRunner.ic" NAME="TestRunner Coverage Results" MODIFIED="1668242901514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/CPS3230_Assignment_One$UtilsTests.ic" NAME="UtilsTests Coverage Results" MODIFIED="1668242545952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
     </SUITE>
   </component>
 </project>
